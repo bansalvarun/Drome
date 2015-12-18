@@ -1,3 +1,11 @@
+#for migrations
+00*.py
+
+#for secret settings and db settings
+settings_*.py
+
+
+############## default for python ###########
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
