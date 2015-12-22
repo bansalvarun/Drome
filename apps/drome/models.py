@@ -23,4 +23,7 @@ class Seat(Model):
 	vacant = BooleanField(default = True)
 	occupiedBy =  OneToOneField(Profile, null=True, blank = True)
 	def __unicode__(self):
-		return self.vacant
+		if(self.vacant==True):
+			return "True"
+		else:
+			return "False"
