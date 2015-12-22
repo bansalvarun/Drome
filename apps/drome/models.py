@@ -16,7 +16,7 @@ class Car(Model):
 	flexible = BooleanField(default=False)
 	flexibleTimeLimit = IntegerField(blank=True, null=True, help_text="in minutes")
 	def __unicode__(self):
-		return car.seats
+		return self.model
 
 class Seat(Model):
 	car = ForeignKey(Car)
