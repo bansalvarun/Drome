@@ -12,7 +12,7 @@ class Car(Model):
 	model = CharField(max_length=30, blank=True)
 	color = CharField(max_length = 10, blank=True)
 	seats = IntegerField(default=1)
-	leaveTime = DateTimeField(auto_now_add=True)
+	leaveTime = DateTimeField()
 	flexible = BooleanField(default=False)
 	flexibleTimeLimit = IntegerField(blank=True, null=True, help_text="in minutes")
 	def __unicode__(self):
