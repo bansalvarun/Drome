@@ -1,0 +1,176 @@
+/*@media screen and (min-width: 720px) {
+	body {
+		overflow-x: hidden;
+	}
+}
+
+@media screen and (max-width: 720px) {
+	body {
+		overflow: auto;
+	}
+}*/
+
+body {
+	background: #ffffff;
+}
+
+.fullPage {
+	height: 100vh;
+}
+
+.Page_5 {
+	height: 5%;
+}
+
+.Page_10 {
+	height: 10%;
+}
+
+.Page_85 {
+	height: 85%;
+}
+
+.Page_95 {
+	height: 95%;
+}
+
+.Page_100 {
+	height: 100%;
+}
+
+/*######################################*/
+/* The Stage - Where the Magic Happens */
+/*#####################################*/
+
+@font-face {
+	font-family: 'nameFont';
+	src: url("../resources/fonts/helvetica-neue-ultra-light.ttf") format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.largeHeader {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+	z-index: 1;
+}
+
+.container {
+	display: table;
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate3d(-50%,-50%,0);
+	transform: translate3d(-50%,-50%,0);
+}
+
+.logoAndSignUp {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+@media (min-device-width: 768px) {
+
+	.justLogo, .justText {
+		display: inline-block;
+		text-align: center;
+	}
+
+	.imageLogo {
+		height: auto;
+		width: 50vw;
+		margin: auto;
+	}
+
+	.projectName {
+		font-family: "nameFont";
+		font-size: 7vw;
+	}
+
+	.projectNameHolder {
+		background-color: rgba(255,255,255,0.8);
+	}
+
+	.SignIn {
+		font-family: 'Roboto';
+		font-size: 1.6vw;
+		background-color: #3e82ff;
+		color: #fff;
+		border-color: transparent;
+		margin: 2px;
+	}
+
+	.SignIn:hover {
+		background-color: #8bb4ff;
+		color: #fafafa;
+	}
+
+	.SignIn:focus {
+		background-color: #3e82ff;
+		color: #fff;
+	}
+
+	.SignInButton {
+		margin-top: 2vh;
+	}
+
+}
+
+@media (max-device-width: 768px) {
+
+	.justLogo, .justText {
+		display: block;
+		text-align: center;
+	}
+
+	.imageLogo {
+		height: auto;
+		width: 75vw;
+		margin: auto;
+	}
+
+	.projectName {
+		font-family: 'Roboto';
+		font-size: 12vw;
+	}
+
+	.SignIn {
+		font-family: "nameFont";
+		font-size: 3vw;
+		background-color: #3e82ff;
+		color: #fff;
+		border-color: transparent;
+	}
+
+}
+
+/*######################################*/
+/*       Header and Footer Stuff       */
+/*#####################################*/
+
+.header {
+	background-color: #fafafa;
+}
+
+.name {
+	text-align: right;
+	padding-top: 5px;
+	padding-right: 20px;
+	font-size: 28px;
+}
+
+.footer {
+	text-align: right;
+	font-size: 12px;
+	background-color: #3e82ff;
+	margin-top: auto;
+	color: #fff;
+}
+.footer-text {
+	padding-right: 20px;
+	padding-top: 8px;
+}
