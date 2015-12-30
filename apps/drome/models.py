@@ -9,7 +9,7 @@ class Profile(Model):
 class Car(Model):
 	owner = OneToOneField(Profile)
 	registeredNumber = CharField(max_length = 10)
-	model = CharField(max_length=30, blank=True)
+	# model = CharField(max_length=30, blank=True)
 	color = CharField(max_length = 10, blank=True)
 	seats = IntegerField(default=1)
 	leaveTime = DateTimeField()

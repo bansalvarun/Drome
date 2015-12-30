@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
-#from settings_secret import *
+from settings_secret import *
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -40,13 +40,15 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # 'allauth',
-    # 'allauth.account',
-    # 'allauth.socialaccount',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
     # 'allauth.socialaccount.providers.facebook',
-    # 'allauth.socialaccount.providers.google',
-    # 'django.contrib.sites',
+    'allauth.socialaccount.providers.google',
 )
+
+SITE_ID = 1
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -64,7 +66,7 @@ ROOT_URLCONF = 'Drome.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -119,38 +121,18 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = 'static/'
+STATIC_ROOT = '/static/'
+STATICFILES_DIRS = (
+	os.path.join(BASE_DIR, "static"),
+)
 
 
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 
-SOCIALACCOUNT_PROVIDERS = \
-    { 'google':
-        { 'SCOPE': ['profile', 'email'],
-          'AUTH_PARAMS': { 'access_type': 'online' } }}
-SOCIALACCOUNT_PROVIDERS = \
-    {'facebook':
-       {'METHOD': 'oauth2',
-        'SCOPE': ['email', 'public_profile', 'user_friends'],
-        'AUTH_PARAMS': {'auth_type': 'reauthenticate'},
-        'FIELDS': [
-            'id',
-            'email',
-            'name',
-            'first_name',
-            'last_name',
-            'verified',
-            'locale',
-            'timezone',
-            'link',
-            'gender',
-            'updated_time'],
-        'EXCHANGE_TOKEN': True,
-        'LOCALE_FUNC': 'path.to.callable',
-        'VERIFIED_EMAIL': False,
-        'VERSION': 'v2.4'}}
-
+# ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_EMAIL_VERIFICATION = "none"
+SOCIALACCOUNT_QUERY_EMAIL = True
 LOGIN_REDIRECT_URL = '/'
 ACCOUNT_LOGOUT_ON_GET =True
